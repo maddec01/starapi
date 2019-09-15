@@ -24,7 +24,6 @@ const App = () => (
     </BrowserRouter>
     <Footer />
   </React.Fragment>
-  
 );
 
 export default App;

@@ -15,9 +15,12 @@ class SwapiApp extends Component {
 
   searchRefresh = (event) => {
     let searchText = event.target.value;
+    // reset timeout if active
     if (this.timeout) clearTimeout(this.timeout)
+    //check if input in empty
     if (searchText) {
       this.timeout = setTimeout(() => {
+        // change satus and fetch
         this.setState({ waiting: false, loading: true })
         this.fetchResults(searchText)
       }, 350);
@@ -29,12 +32,14 @@ class SwapiApp extends Component {
   fetchResults = (searchText) => {
     console.log('called')
     fetch('https://swapi.co/api/people/?search=' + searchText).then((response) => {
+      // check errors
       if (response.ok) {
         return response.json();
       } else {
         throw new Error('Something went wrong');
       }
     })
+    // update state
     .then(people => {
       this.setState({ people: people.results, loading: false})})
     .catch((error) => {
