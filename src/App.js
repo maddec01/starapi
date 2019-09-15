@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import * as ROUTES from './constants/routes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import LandingPage from './containers/Landing';
+import SwapiAppPage from './containers/SwapiApp';
+import AboutPage from './containers/About';
+
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+
+const App = () => (
+  <React.Fragment>
+    <Header />
+    <BrowserRouter>
+      <Navigation />
+      <Switch>
+          <Route path={ROUTES.APP_1} component={ SwapiAppPage } />
+          <Route path={ROUTES.ABOUT} component={ AboutPage } />
+          <Route exact path={ROUTES.LANDING} component={ LandingPage } />
+          <Redirect from='*' to={ROUTES.LANDING} />
+      </Switch>
+    </BrowserRouter>
+    <Footer />
+  </React.Fragment>
+  
+);
 
 export default App;

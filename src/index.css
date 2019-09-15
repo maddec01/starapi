@@ -11,3 +11,208 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Global */
+
+#root {
+  position: relative;
+  min-height: 100vh;
+  background-color: #111;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  opacity: 0.55;
+  text-decoration: none;
+  -webkit-transition: opacity 300ms;
+  -moz-transition: opacity 300ms;
+  transition: opacity 300ms;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+section {
+  padding: 50px 0px;
+}
+
+/* Header */
+
+header {
+  height: 100px;
+  color: #fff;
+  background-color: #222;
+  background-image: url('./sw_logo_horiz.png');
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: 300px auto;
+}
+
+/* Navigation */
+
+nav {
+  list-style:none;
+  text-align:center;
+  background-color: #222;
+  border-top: 1px solid #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display:inline;
+}
+
+nav a {
+  display: inline-block;
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+nav a.active {
+  opacity: 1;
+}
+
+/* Footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align:center;
+  background-color: #222;
+  border-top: 1px solid #333;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* Grid System */
+
+.container {
+  max-width: calc( 950px + 10% );
+  margin: 0 auto;
+  position: relative;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1 1 8%;
+  box-sizing: border-box;
+}
+
+/* nested grids */
+.row .row, .row.nested {
+  flex: 1 1 auto;
+}
+
+/* columns widths */
+
+.col-span-1 {
+  flex-basis: 8.3333%;
+}
+
+.col-span-2 {
+  flex-basis: 16.6666%; 
+}
+
+.col-span-2-3 {
+  flex-basis: 20%; 
+}
+
+.col-span-3 {
+  flex-basis: 25%;
+}
+
+.col-span-4 {
+  flex-basis: 33.3333%;
+}
+
+.col-span-5 {
+  flex-basis: 41.6666%;
+}
+
+.col-span-6 {
+  flex-basis: 50%;
+}
+
+.col-span-7 {
+  flex-basis: 58.3333%;
+}
+
+.col-span-8 {
+  flex-basis: 66.6666%;
+}
+
+.col-span-9 {
+  flex-basis: 75%;
+}
+
+.col-span-10 {
+  flex-basis: 83.3333%;
+}
+
+.col-span-11 {
+  flex-basis: 91.6666%;
+}
+
+.col-span-12 {
+  flex-basis: 100%;
+}
+
+/* Responsive */
+.fixed-width {
+  flex: 0 0 768px;
+}
+
+@media all and (max-width: 768px) {
+  .col-span-1,
+  .col-span-2,
+  .col-span-3,
+  .col-span-4,
+  .col-span-5 {
+      flex-basis: 50%;
+  }
+
+  .col-span-6,
+  .col-span-7,
+  .col-span-8,
+  .col-span-9,
+  .col-span-10,
+  .col-span-11 {
+      flex-basis: 100%;
+  }
+
+  .nested .col {
+      flex-basis: 100%;
+  }
+}
+
+/* Pages */
+
+.swapi .col,
+.landing .col,
+.about .col {
+  text-align: center;
+}
+
+.swapi input {
+  -webkit-appearance: none;
+  width: 250px;
+  height: 40px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 10px;
+}
