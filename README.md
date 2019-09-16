@@ -6,3 +6,5 @@ To run the app yourself you can clone or download the repo and then run this com
 ### `npm install`
 
 ### `npm start`
+
+After that the app will start atomatically and you can continue the instructions there.
