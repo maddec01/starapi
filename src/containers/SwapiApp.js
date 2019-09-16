@@ -55,7 +55,7 @@ class SwapiApp extends Component {
         <div className="container swapi">
           <SwapiSearch searchChange={this.searchRefresh}/>
           {!waiting ? ( 
-            !loading ? 
+            !loading ?
               <SwapiList people={people} /> :
               <div className="row nested">
                 <div className="col col-span-12">
